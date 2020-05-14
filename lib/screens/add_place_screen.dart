@@ -10,18 +10,29 @@ class AddPlaceScreen extends StatefulWidget {
 class _AddPlaceScreenState extends State<AddPlaceScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Add a New Place'),
+    return Container(
+      color: Theme.of(context).primaryColor,
+      child: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('Add a New Place'),
+          ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text('User Inputs...'),
+              RaisedButton.icon(
+                icon: Icon(Icons.add),
+                label: Text('Add Place'),
+                onPressed: () {},
+                elevation: 0,
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              )
+            ],
+          ),
+        ),
       ),
-      body: Column(children: [
-        Text('User Inputs...'),
-        RaisedButton.icon(
-          icon: Icon(Icons.add),
-          label: Text('Add Place'),
-          onPressed: null,
-        )
-      ]),
     );
   }
 }

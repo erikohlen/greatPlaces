@@ -13,10 +13,12 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (ctx) => GreatPlaces(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Great Places',
         theme: ThemeData(
           primarySwatch: Colors.indigo,
           accentColor: Colors.amber,
+          //scaffoldBackgroundColor: Color(0xFF121212),
         ),
         home: PlacesListScreen(),
         routes: {
