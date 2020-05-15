@@ -27,7 +27,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
     }
     Provider.of<GreatPlaces>(context, listen: false)
         .addPlace(_titleController.text, _pickedImage);
-    Navigator.of(context).pushNamed(AddPlaceScreen.routeName);
+    Navigator.of(context).pop();
   }
 
   @override
@@ -66,7 +66,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
               RaisedButton.icon(
                 icon: Icon(Icons.add),
                 label: Text('Add Place'),
-                onPressed: () {},
+                onPressed: _savedPlace,
                 elevation: 0,
                 materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 color: Theme.of(context).accentColor,
