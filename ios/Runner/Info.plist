@@ -26,6 +26,10 @@
 	<string>We want to LOOK at pictures of your mom.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>We want to TAKE pictures of your mom.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We want to SOMETIMES see WHERE your mom is.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We want to ALWAYS see WHERE your mom is.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
