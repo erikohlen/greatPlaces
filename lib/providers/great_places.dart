@@ -13,13 +13,19 @@ class GreatPlaces with ChangeNotifier {
     return [..._items];
   }
 
+  Place findById(String id) {
+    return _items.firstWhere((place) => place.id == id);
+  }
+
   Future<void> addPlace(
     String pickedTitle,
     File pickedImage,
     PlaceLocation pickedLocation,
   ) async {
+    print('running addPlace');
     final address = await LocationHelper.getPlaceAddress(
         pickedLocation.latitude, pickedLocation.longitude);
+    print(address);
     final updatedLocation = PlaceLocation(
       latitude: pickedLocation.latitude,
       longitude: pickedLocation.longitude,
@@ -41,10 +47,13 @@ class GreatPlaces with ChangeNotifier {
       'loc_lng': newPlace.location.longitude,
       'address': newPlace.location.address,
     });
+    print(newPlace.toString());
   }
 
   Future<void> fetchAndSetPlaces() async {
+    print('run fetchAndSetPlaces');
     final dataList = await DBHelper.getData('user_places');
+    print(dataList.toString());
     _items = dataList
         .map(
           (item) => Place(
